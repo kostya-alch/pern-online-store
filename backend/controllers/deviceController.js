@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const uuid = require('uuid');
 const path = require('path');
 const { Device } = require('../models/models');
@@ -21,6 +22,12 @@ class DeviceController {
     } catch (error) {
       next(apiError.badRequest(error.message));
     }
+=======
+
+class DeviceController {
+  async create(req, res) {
+     
+>>>>>>> 30cf9c040c9f0cd672241d52b66167039184da9e
   }
 
   async getAll(req, res) {}
