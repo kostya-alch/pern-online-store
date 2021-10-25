@@ -1,5 +1,5 @@
 const { Sequelize } = require('sequelize');
-
+// информация о базе данных
 module.exports = new Sequelize(
   process.env.DB_NAME,
   process.env.DB_USER,

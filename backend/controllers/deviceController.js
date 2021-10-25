@@ -43,7 +43,7 @@ class DeviceController {
     let devices;
 
     if (!brandId && !typeId) {
-      devices = await Device.findAndCountAll({ limit, offset }); // логика поиска товара в бд. возможно, дублирование кода
+      devices = await Device.findAndCountAll({ limit, offset }); // логика поиска товара в бд. возможно, дублирование кода, лучше не придумал
     }
     if (brandId && !typeId) {
       devices = await Device.findAndCountAll({
@@ -62,7 +62,7 @@ class DeviceController {
     }
     return res.json(devices);
   }
-  async getOne(req, res) {
+  async getOne(req, res) { 
     const { id } = req.params;
     const device = await Device.findOne({
       where: { id },

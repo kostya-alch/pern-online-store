@@ -38,7 +38,7 @@ class UserController {
     if (!user) {
       return next(ApiError.internal('Пользователь с таким именем не найден'));
     }
-    let comparePassword = bcrypt.compareSync(password, user.password);
+    let comparePassword = bcrypt.compareSync(password, user.password); // шифруем пароль в БД
     if (!comparePassword) {
       return next(ApiError.internal('Указан неверный пароль'));
     }
@@ -47,12 +47,8 @@ class UserController {
   }
 
   async check(req, res, next) {
-    // метод на проверку авторизации
-    const { id } = req.query;
-    if (!id) {
-      return next(ApiError.badRequest('Не задан ID')); // проверка и выброс ошибки
-    }
-    res.json(id);
+    const token = jwtTokenGenerate(req.user.id, req.user.email, req.user.role); // генерация токена по новой из запроса
+    return res.json({ token });
   }
 }
 
