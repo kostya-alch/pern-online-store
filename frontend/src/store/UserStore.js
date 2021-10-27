@@ -6,13 +6,15 @@ export default class UserStore {
     this._user = {};
     makeAutoObservable(this); // теперь mobx следит за изменениями этих переменных и отрисовывает по новой страницу
   }
-  setIsAuth(bool) { // изменяем переменные с помощью методов класса
+  setIsAuth(bool) {
+    // изменяем переменные с помощью методов класса
     this._isAuth = bool;
   }
   setUser(user) {
     this._user = user;
   }
-  get isAuth() { // вызываются ,если изменились переменные. своего рода оптимизация в mobx
+  get isAuth() {
+    // вызываются ,если изменились переменные. своего рода оптимизация в mobx
     return this._isAuth;
   }
   get user() {
