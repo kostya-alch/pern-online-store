@@ -24,6 +24,41 @@ export default class UserStore {
         rating: 5,
         img: 'https://proprikol.ru/wp-content/uploads/2021/01/krasivye-kartinki-sobak-44.jpg',
       },
+      {
+        id: 2,
+        name: 'Iphone 12',
+        price: 25000,
+        rating: 5,
+        img: 'https://proprikol.ru/wp-content/uploads/2021/01/krasivye-kartinki-sobak-44.jpg',
+      },
+      {
+        id: 3,
+        name: 'Iphone 12',
+        price: 25000,
+        rating: 5,
+        img: 'https://proprikol.ru/wp-content/uploads/2021/01/krasivye-kartinki-sobak-44.jpg',
+      },
+      {
+        id: 4,
+        name: 'Iphone 12',
+        price: 25000,
+        rating: 5,
+        img: 'https://proprikol.ru/wp-content/uploads/2021/01/krasivye-kartinki-sobak-44.jpg',
+      },
+      {
+        id: 5,
+        name: 'Iphone 12',
+        price: 25000,
+        rating: 5,
+        img: 'https://proprikol.ru/wp-content/uploads/2021/01/krasivye-kartinki-sobak-44.jpg',
+      },
+      {
+        id: 6,
+        name: 'Iphone 12',
+        price: 25000,
+        rating: 5,
+        img: 'https://proprikol.ru/wp-content/uploads/2021/01/krasivye-kartinki-sobak-44.jpg',
+      },
     ];
     this._selectedType = {};
     this._selectedBrand = {};
