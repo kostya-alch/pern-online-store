@@ -5,11 +5,10 @@ import UserStore from './store/UserStore';
 import DeviceStore from './store/DeviceStore';
 
 export const context = createContext(null); // создали context для store и прокинули его ниже
-
 ReactDOM.render(
   <context.Provider
     value={{
-      user: new UserStore(),
+      user: new UserStore(), // прокидываем сторы из mobx через контекст
       device: new DeviceStore(),
     }}
   >
