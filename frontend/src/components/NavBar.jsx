@@ -12,6 +12,12 @@ import { useHistory } from 'react-router-dom'
 const NavBar = observer(() => {
    const { user } = useContext(context)
    const history = useHistory()
+
+   const logOut = () => { //функция сброса авторизации по кнопке "выйти"
+      user.setUser({})
+      user.setIsAuth(false)
+   }
+
    return (
       <Navbar bg="primary" variant="dark">
          <Container>
@@ -19,12 +25,23 @@ const NavBar = observer(() => {
             {user.isAuth // условный рендеринг, если пользователь еще не авторизовался
                ?
                <Nav className="ml-auto" style={{ color: 'white' }}>
-                  <Button variant="success" onClick={() => history.push(ADMIN_ROUTE)} >Панель администратора</Button>
-                  <Button variant="success" onClick={() => history.push(LOGIN_ROUTE)} className='mx-3'>Выйти</Button>
+                  <Button variant="success"
+                     onClick={() => history.push(ADMIN_ROUTE)}>
+                     Панель администратора
+                  </Button>
+                  <Button variant="success"
+                     onClick={logOut}
+                     className='mx-3'>
+                     Выйти
+                  </Button>
                </Nav>
                :
-               <Nav className="ml-auto" style={{ color: 'white' }}>
-                  <Button variant="success" onClick={() => user.setIsAuth(true)}>Авторизация</Button>
+               <Nav className="ml-auto"
+                  style={{ color: 'white' }}>
+                  <Button variant="success"
+                     onClick={() => history.push(LOGIN_ROUTE)}>
+                     Авторизация
+                  </Button>
                </Nav>
             }
          </Container>

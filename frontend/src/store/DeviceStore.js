@@ -2,64 +2,9 @@ import { makeAutoObservable } from 'mobx';
 // store для конкретного товара
 export default class UserStore {
   constructor() {
-    this._types = [
-      // пока что заглушки для удобства верстки
-      { id: 1, name: 'Холодильники' },
-      { id: 2, name: 'Смартфоны' },
-      { id: 3, name: 'Стиралки' },
-      { id: 4, name: 'Микроволновки' },
-    ];
-    this._brands = [
-      { id: 1, name: 'Samsung' },
-      { id: 2, name: 'Apple' },
-      { id: 3, name: 'Lenovo' },
-      { id: 4, name: 'Dell' },
-      { id: 5, name: 'Mac' },
-    ];
-    this._devices = [
-      {
-        id: 1,
-        name: 'Iphone 12',
-        price: 25000,
-        rating: 5,
-        img: 'https://proprikol.ru/wp-content/uploads/2021/01/krasivye-kartinki-sobak-44.jpg',
-      },
-      {
-        id: 2,
-        name: 'Iphone 12',
-        price: 25000,
-        rating: 5,
-        img: 'https://proprikol.ru/wp-content/uploads/2021/01/krasivye-kartinki-sobak-44.jpg',
-      },
-      {
-        id: 3,
-        name: 'Iphone 12',
-        price: 25000,
-        rating: 5,
-        img: 'https://proprikol.ru/wp-content/uploads/2021/01/krasivye-kartinki-sobak-44.jpg',
-      },
-      {
-        id: 4,
-        name: 'Iphone 12',
-        price: 25000,
-        rating: 5,
-        img: 'https://proprikol.ru/wp-content/uploads/2021/01/krasivye-kartinki-sobak-44.jpg',
-      },
-      {
-        id: 5,
-        name: 'Iphone 12',
-        price: 25000,
-        rating: 5,
-        img: 'https://proprikol.ru/wp-content/uploads/2021/01/krasivye-kartinki-sobak-44.jpg',
-      },
-      {
-        id: 6,
-        name: 'Iphone 12',
-        price: 25000,
-        rating: 5,
-        img: 'https://proprikol.ru/wp-content/uploads/2021/01/krasivye-kartinki-sobak-44.jpg',
-      },
-    ];
+    this._types = [];
+    this._brands = [];
+    this._devices = [];
     this._selectedType = {};
     this._selectedBrand = {};
 

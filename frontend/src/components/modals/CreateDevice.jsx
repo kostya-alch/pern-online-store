@@ -16,6 +16,7 @@ const CreateDevice = ({ show, onHide }) => {
       setInfo(info.filter(i => i.number !== number))
    }
 
+   
    return (
       <Modal
          show={show}

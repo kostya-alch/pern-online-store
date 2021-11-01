@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom'
 import { useHistory, useLocation } from 'react-router'
 import { LOGIN_ROUTE, REGISTATION_ROUTE, SHOP_ROUTE } from '../utils/consts'
 import Row from 'react-bootstrap/Row'
-import { login, registation } from '../http/userAPI'
+import { login, registration } from '../http/userAPI'
 import { observer } from 'mobx-react-lite'
 import { context } from '..'
 
@@ -23,17 +23,18 @@ const Auth = observer(() => {
       try {
          let data;
          if (isLogin) {
-            data = await login(email, password)
-         }
-         else {
-            data = await registation(email, password)
+            data = await login(email, password);
+         } else {
+            data = await registration(email, password);
          }
          user.setUser(user)
          user.setIsAuth(true)
          history.push(SHOP_ROUTE)
-      } catch (error) {
-         alert(error.response.data.message)
+      } 
+      catch (e) {
+         alert(e.response.data.message)
       }
+
 
    }
    return (

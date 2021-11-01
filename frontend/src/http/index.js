@@ -1,11 +1,11 @@
 import axios from 'axios';
 
 const $host = axios.create({
-  baseURL: 'http://localhost:5000/', // инстанс для хоста
+  baseURL: process.env.REACT_APP_API_URL, // инстанс для хоста
 });
 const $authHost = axios.create({
   // инстанс для авторизованных пользователей
-  baseURL: 'http://localhost:5000/',
+  baseURL: process.env.REACT_APP_API_URL,
 });
 
 const authIntercepter = (config) => {
