@@ -12,7 +12,8 @@ const TypeBar = observer(() => {
                style={{ cursor: 'pointer' }}
                active={type.id === device.selectedType.id} // кнопка активна, если айди типа совпдаает с айди выбранного типа
                onClick={() => device.setSelectedType(type)}
-               key={type.id}>
+               key={type.id}
+               >
                {type.name}
             </ListGroup.Item>
          )}

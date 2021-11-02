@@ -1,17 +1,19 @@
 import { makeAutoObservable } from 'mobx';
-// store для конкретного товара
-export default class UserStore {
+
+export default class DeviceStore {
   constructor() {
     this._types = [];
     this._brands = [];
     this._devices = [];
     this._selectedType = {};
     this._selectedBrand = {};
-
-    makeAutoObservable(this); // теперь mobx следит за изменениями этих переменных и отрисовывает по новой страницу
+    this._page = 1;
+    this._totalCount = 0;
+    this._limit = 3;
+    makeAutoObservable(this);
   }
+
   setTypes(types) {
-    // изменяем переменные с помощью методов класса
     this._types = types;
   }
   setBrands(brands) {
@@ -22,14 +24,21 @@ export default class UserStore {
   }
 
   setSelectedType(type) {
+    this.setPage(1);
     this._selectedType = type;
   }
   setSelectedBrand(brand) {
+    this.setPage(1);
     this._selectedBrand = brand;
+  }
+  setPage(page) {
+    this._page = page;
+  }
+  setTotalCount(count) {
+    this._totalCount = count;
   }
 
   get types() {
-    // вызываются ,если изменились переменные. своего рода оптимизация в mobx
     return this._types;
   }
   get brands() {
@@ -43,5 +52,14 @@ export default class UserStore {
   }
   get selectedBrand() {
     return this._selectedBrand;
+  }
+  get totalCount() {
+    return this._totalCount;
+  }
+  get page() {
+    return this._page;
+  }
+  get limit() {
+    return this._limit;
   }
 }

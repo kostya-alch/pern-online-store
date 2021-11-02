@@ -2,7 +2,7 @@ import { makeAutoObservable } from 'mobx';
 // store для юзера.
 export default class UserStore {
   constructor() {
-    this._isAuth = false;
+    this._isAuth = true;
     this._user = {};
     makeAutoObservable(this); // теперь mobx следит за изменениями этих переменных и отрисовывает по новой страницу
   }

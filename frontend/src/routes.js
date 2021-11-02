@@ -9,7 +9,7 @@ import {
   BASKET_ROUTE,
   DEVICE_ROUTE,
   LOGIN_ROUTE,
-  REGISTATION_ROUTE,
+  REGISTRATION_ROUTE,
   SHOP_ROUTE,
 } from './utils/consts';
 
@@ -37,7 +37,7 @@ export const publicRoutes = [
     Component: Auth,
   },
   {
-    path: REGISTATION_ROUTE,
+    path: REGISTRATION_ROUTE,
     Component: Auth,
   },
   {
